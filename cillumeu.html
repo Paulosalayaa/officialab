@@ -1,0 +1,25 @@
+<!-- HTML Structure -->
+<div class="acf-field" data-name="example_field">
+    <!-- Field content goes here -->
+</div>
+
+<script>
+    (function($){
+        $(document).ready(function(){
+            // Select the ACF field using a CSS class or any other appropriate selector
+            var field = $('.acf-field[data-name="example_field"]');
+
+            // Retrieve and deeply copy the data associated with the field
+            var fieldData = $.extend(true, {}, acf.get_data(field));
+
+            // Log the field data to the console for inspection
+            console.log('Field Data:', fieldData);
+
+            // Example manipulation: Add a new property to the copied data
+            fieldData.newProperty = 'New Value';
+
+            // Log the modified field data to the console
+            console.log('Modified Field Data:', fieldData);
+        });
+    })(jQuery);
+</script>
